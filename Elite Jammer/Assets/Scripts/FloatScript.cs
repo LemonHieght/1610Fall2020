@@ -8,7 +8,7 @@ public class FloatScript : ScriptableObject
 {
     public float value = 1f;
 
-    public void ChangeValue(int number)
+    public void ChangeValue(float number)
     {
         value += number;
     }
