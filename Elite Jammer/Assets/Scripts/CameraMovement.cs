@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     
     void Update()
     {    
-        targetPos = new Vector3 (target.transform.position.x - xValue,yValue,target.transform.position.z - zValue);
+        targetPos = new Vector3 (target.transform.position.x - xValue,target.transform.position.y - yValue,target.transform.position.z - zValue);
         transform.position = Vector3.Lerp (transform.position,targetPos,moveSpeed * Time.deltaTime);
     }
 }
