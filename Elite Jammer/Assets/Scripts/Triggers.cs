@@ -10,18 +10,27 @@ public class Triggers : MonoBehaviour
     public UnityEvent triggerExit;
     public UnityEvent triggerStay;
     
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider target)
     {
-        triggerEnter.Invoke();
+        if (target.tag == "Player")
+        {
+            triggerEnter.Invoke(); 
+        }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider target)
     {
-        triggerExit.Invoke();
+        if (target.tag == "Player")
+        {
+            triggerExit.Invoke(); 
+        };
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider target)
     {
-       triggerStay.Invoke(); 
+        if (target.tag == "Player")
+        {
+            triggerStay.Invoke(); 
+        }
     }
 }

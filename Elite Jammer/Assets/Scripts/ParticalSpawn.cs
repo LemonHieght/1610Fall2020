@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ParticalSpawn : MonoBehaviour
 {
-    public GameObject health;
+    public GameObject collection;
     public Transform objectPoint;
-    public GameObject HealthParticles;
+    public GameObject particles;
     public void Collect()
     {
         // Destroy(health);
-        Instantiate(HealthParticles, objectPoint.position, objectPoint.rotation);
+        Instantiate(particles, objectPoint.position, objectPoint.rotation);
     }
 }
