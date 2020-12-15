@@ -10,6 +10,7 @@ public class MoverScript : MonoBehaviour
     public float jumpPower = 5;
     public Rigidbody myRigidBody;
     public bool ground;
+    public Animator animator;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class MoverScript : MonoBehaviour
     {
         Debug.Log("Turn off game.");
         x = Input.GetAxis("Horizontal")* Time.deltaTime;
-        
+
         // y = Input.GetAxis("Vertical") * Time.deltaTime;
         if(Input.GetButtonDown("Jump") && ground)
         {
@@ -29,6 +30,7 @@ public class MoverScript : MonoBehaviour
         }
         
         transform.Translate(speed * x,speed * y,z);
+        animator.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
     }
 
     void OnCollisionStay()
